@@ -12,6 +12,7 @@ const PreferencesWrapper = ({
   modalOnChangeConfig,
 }: PreferencesWrapperProps) => {
   const [sThemeSetting, setThemeSetting] = useState<ThemeSetting>();
+  const [sOsIsDarkMode, setOsIsDarkMode] = useState<boolean>();
   const [sIsOpenOnStartup, setIsOpenOnStartup] = useState<boolean>();
   const [sIsNotificationsEnabled, setIsNotificationsEnabled] =
     useState<boolean>();
@@ -23,12 +24,17 @@ const PreferencesWrapper = ({
       console.log('pref userSettings', userSettings);
       // use the os setting unless the user changes
       let themeSetting: ThemeSetting = 'auto';
+      let osIsDarkMode = false;
       if (userSettings.appThemeSetting) {
         themeSetting = userSettings.appThemeSetting;
+      }
+      if (userSettings.osIsDarkMode) {
+        osIsDarkMode = userSettings.osIsDarkMode;
       }
       const notificationsSetting =
         userSettings.appIsNotificationsEnabled || false;
       setThemeSetting(themeSetting);
+      setOsIsDarkMode(osIsDarkMode);
       setIsNotificationsEnabled(notificationsSetting);
     };
     asyncData();
@@ -69,9 +75,12 @@ const PreferencesWrapper = ({
     },
     [modalOnChangeConfig]
   );
+
+  if (sThemeSetting === undefined || sOsIsDarkMode === undefined) return null;
   return (
     <Preferences
       themeSetting={sThemeSetting}
+      osDarkMode={sOsIsDarkMode}
       isOpenOnStartup={sIsOpenOnStartup}
       version={sNiceNodeVersion}
       isNotificationsEnabled={sIsNotificationsEnabled}
