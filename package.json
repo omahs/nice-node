@@ -93,7 +93,13 @@
     "linux": {
       "target": [
         "deb",
-        "AppImage"
+        "AppImage",
+        "flatpak",
+        "snap"
+      ],
+      "arch": [
+        "arm64",
+        "x64"
       ],
       "category": "Network",
       "icon": "icons"
