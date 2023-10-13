@@ -27,9 +27,9 @@ jobs:
       #   run: |
       #     brew install rpm
 
-      - name: Install OS build deps
-        run: |
-          sudo apt-get install rpm
+      # - name: Install OS build deps
+      #   run: |
+      #     sudo apt-get install rpm
 
       - name: Used variables
         run: |

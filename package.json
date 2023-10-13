@@ -93,7 +93,7 @@
     },
     "linux": {
       "target": [
-        "rpm"
+        "snap"
       ],
       "category": "Network",
       "icon": "icons"
