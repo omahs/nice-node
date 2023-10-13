@@ -25,6 +25,7 @@ jobs:
       - name: Install snapcraft brew package
         run: |
           brew install snapcraft
+          brew install rpm
 
       - name: Used variables
         run: |
