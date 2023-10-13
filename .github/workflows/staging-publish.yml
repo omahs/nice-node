@@ -19,10 +19,11 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest]
+        os: [macos-13]
 
     steps:
-      - name: Install snapcraft brew package
+      # rpm brew requires macos-13 or later
+      - name: Install snapcraft rpm makepkg brew packages
         run: |
           brew install snapcraft
           brew install rpm
