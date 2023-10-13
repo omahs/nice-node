@@ -93,7 +93,7 @@
     },
     "linux": {
       "target": [
-        "pacman"
+        "rpm"
       ],
       "category": "Network",
       "icon": "icons"
