@@ -93,9 +93,7 @@
     },
     "linux": {
       "target": [
-        "snap",
-        "deb",
-        "AppImage"
+        "rpm"
       ],
       "category": "Network",
       "icon": "icons"
