@@ -25,7 +25,6 @@ jobs:
       # rpm brew requires macos-13 or later
       - name: Install snapcraft rpm makepkg brew packages
         run: |
-          brew install snapcraft
           brew install rpm
 
       - name: Used variables
